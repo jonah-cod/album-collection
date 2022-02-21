@@ -1,8 +1,12 @@
 import './App.css';
+import React from 'react';
+import NavBar from './components/navBar';
+import AlbumContainer from './components/albumContainer';
 
 function App() {
     return ( <div className = "App" >
-        <h2>iprocure</h2>
+        <NavBar/>
+        <AlbumContainer/>
         </div>
     );
 }
