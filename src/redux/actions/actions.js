@@ -1,4 +1,4 @@
-import { REQUESTFAILED, REQUESTING, REQUESTSUCCESS } from "../types";
+import { FILTER, REQUESTFAILED, REQUESTING, REQUESTSUCCESS } from "../types";
 
 
 export const requestsuccess = (albums) => {
@@ -15,5 +15,12 @@ export const requestfailed = () => {
 export const requesting = () => {
     return ({
         type: REQUESTING
+    })
+}
+
+export const filter = (filter) => {
+    return ({
+        type: FILTER,
+        payload: filter
     })
 }

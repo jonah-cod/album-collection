@@ -1,4 +1,4 @@
-import { REQUESTFAILED, REQUESTING, REQUESTSUCCESS } from "../types";
+import { FILTER, REQUESTING, REQUESTSUCCESS } from "../types";
 
 const initialState = {
     loading: false,
@@ -21,6 +21,9 @@ export const manipulateAlbums = (state = initialState, { type, payload }) => {
                 loading: false
             })
 
+        case FILTER:
+
+            return state.payload.filter((album) => album.data.album.name.includes(payload))
 
         default:
             return state;

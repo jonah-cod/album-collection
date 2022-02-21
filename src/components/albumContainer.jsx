@@ -3,7 +3,7 @@ import Album from './album'
 import gettracks from '../services/getTracks.js'
 import data from '../data'
 import { useDispatch, useSelector } from 'react-redux'
-import  {requestsuccess, requestfailed, requesting}  from '../redux/actions/actions'
+import  {requestsuccess, requesting}  from '../redux/actions/actions'
 
 const AlbumContainer = () => {
   let albums = useSelector(state=>state.payload);
@@ -17,8 +17,8 @@ const AlbumContainer = () => {
       return gettracks({album:album.name, artist})
     })
   ).then(res=>{
-  
-    dispatch(requestsuccess(res))})
+    let albums = res
+    dispatch(requestsuccess(albums))})
     
   }, [])
   
